@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "backend mern express mong,moongoose",
   "main": "script.js",
+  "type": "module",
   "scripts": {
-    "start": "npm node script.js" 
+    "dev": "nodemon src/script.js"
   },
   "author": "Satish",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
 }
