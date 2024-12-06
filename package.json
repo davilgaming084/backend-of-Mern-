@@ -1,0 +1,11 @@
+{
+  "name": "backend-of-mern-",
+  "version": "1.0.0",
+  "description": "backend mern express mong,moongoose",
+  "main": "script.js",
+  "scripts": {
+    "start": "npm node script.js" 
+  },
+  "author": "Satish",
+  "license": "ISC"
+}
