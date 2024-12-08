@@ -1,32 +1,48 @@
-// require('dotenv').config() // old way 
- 
-import dotenv from "dotenv"
-import DbConnection from "./db/db.js";
+import dotenv from 'dotenv'
+import Db_COnnection from './db/db.js'
+dotenv.config({path:'./env'})
 
-dotenv.config()
-DbConnection()
-// firts approtch
-/*
-import express  from "express"
-const app = express()
-// connecting db 
+Db_COnnection()
 
-; (async function connectDb() {
-    try {
-        await mongoose.connect(`${process.env.MONGODB_URI}/${DbName}`)
-        app.on("error",(error)=>{
-            console.log( error);
-            throw error
-        })
-        app.listen(process.env.PORT, ()=>{
-            console.log(`${PORT} is listning | server is ready `);
-            
-        })
-    } catch (error) {
-        console.error(Error, "<= error");
-        throw error
 
-    }
-})();
-*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// first apoch 
+
+    // ; (async function Db_Connection() {
+    //     try {
+    //         await mongoose.connect(`${process.env.MONGODB_URI_URL}/${DB_Name}`)
+    //         // await mongoose.connect(`${process.env.MONGODB_URI_URL}/ ${DB_Name}`)
+    //         // await mongoose.connect('mongodb+srv://satish:1234567890@cluster0.ntl48.mongodb.net/youtube')
+    //         App.on('error', (error) => {
+    //             console.log('express not able to talk database !! ', error);
+    //             throw error
+    //         })
+
+    //         App.listen(process.env.PORT, () => {
+    //             console.log(` Server is Running | App is listning on ${process.env.PORT}`);
+    //             // console.log(`${process.env.MONGODB_URI_URL} / ${DB_Name}`);
+
+    //         })
+    //     } catch (error) {
+    //         console.error(error)
+    //         throw error
+    //     }
+    // })();
