@@ -1,10 +1,23 @@
-// then catch 
-// const async_handler = () => {
+const async_handler = (fun) => {
+    return (req, res, next) => {
+        Promise.resolve(fun(req,res,next)).catch((error) => next)
+    }
+}
 
-//}
-
-// export {async_handler}
+export { async_handler }
 
 
-// try catch 
-const async_handler = (fun) => { async (req,res,next) => { } }
+// async try catch
+
+// const async_handler = (fun) => {
+//     return async (req, res, next) => {
+//         try {
+//             await fun(req, res, next)
+//         } catch (error) {
+//             res.status(error.code || 500).json({
+//                 success: false,
+//                 message: error.message
+//             })
+//         }
+//     }
+// }
