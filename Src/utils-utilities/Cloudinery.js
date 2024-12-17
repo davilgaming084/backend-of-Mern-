@@ -20,9 +20,9 @@ const uplodeOnCloudinary = async (localfilepath) => {
         console.log(response.url, ' this is response url');
         return response;
     } catch (error) {
-        fs.unlinkSync.(localfilepath) // remove the localy saved temprory file as the uplode operation got failed  
+        fs.unlinkSync(localfilepath) // remove the localy saved temprory file as the uplode operation got failed  
         return null
     }
 }
 
-export {uplodeOnCloudinary}
+export { uplodeOnCloudinary }
