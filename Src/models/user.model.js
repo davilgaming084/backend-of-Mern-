@@ -41,14 +41,14 @@ const UserSChema = new Schema({
         type: String,
         required: 'password is required'
     },
-    refreshToken: {
+    RefreshToken: {
         type: String,
 
     }
 }, { timestamps: true })
 UserSChema.pre('save', async function (next) {
     if (this.isModified('password')) return next() // checking in nevative if password not modify then direct send next if pass modifiend then go next 51 line and encript modify pass
-    this.password = bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
     next()
 })
 UserSChema.methods.isPasswordCorrect = async function (password) {
@@ -71,11 +71,11 @@ UserSChema.methods.genrateAccessToken = function () {
 UserSChema.methods.refreshToken = function () {
     return jwt.sign(
         {
-            _id:this._id
+            _id: this._id
         },
         process.env.REFRESH_TOKEN_SECRET,
         {
-            expiresIn:process.env.REFRESH_TOKEN_EXPIRY
+            expiresIn: process.env.REFRESH_TOKEN_EXPIRY
         }
     )
 }

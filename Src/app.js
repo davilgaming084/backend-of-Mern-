@@ -14,4 +14,10 @@ app.use(express.static('Public'))
 
 // coockie configration
 app.use(cookieParser())
+
+
+// Routes 
+import userRoute from '../Src/routes/user.route.js'
+// route decleration 
+app.use('/api/v1/users',userRoute)
 export default app
